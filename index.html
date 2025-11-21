@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingwe Anniversary Countdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +13,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, rgba(106, 13, 173, 0.15) 0%, rgba(155, 48, 255, 0.85) 100%),
                         url('20250904_170406.jpg') center/cover no-repeat fixed;
             display: flex;
@@ -68,20 +69,31 @@
         }
 
         h1 {
-            color: #000;
+            font-family: 'Poppins', sans-serif;
             font-size: 2.5em;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             margin-bottom: 10px;
-            font-weight: bold;
             line-height: 1.2;
         }
 
-        h1 .ingwe-i {
-            color: #22c55e;
+        .ingwe-text {
+            color: #000;
         }
-        
-        h1 .company-name {
+
+        .ingwe-i {
+            color: #22c55e;
+            font-weight: 800;
+        }
+
+        .waste-management {
+            color: #22c55e;
             display: block;
-            font-size: 0.8em;
+            font-size: 0.65em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 5px;
         }
 
         .subtitle {
@@ -174,8 +186,8 @@
                 font-size: 1.5em;
             }
 
-            h1 .company-name {
-                font-size: 0.75em;
+            .waste-management {
+                font-size: 0.6em;
             }
 
             .subtitle {
@@ -226,8 +238,8 @@
         <div class="logo-section">
             <img src="loko.png" alt="Ingwe Logo" class="company-logo">
             <h1>
-                <span class="ingwe-i">i</span>NGWE
-                <span class="company-name">WASTE MANAGEMENT</span>
+                <span class="ingwe-text"><span class="ingwe-i">i</span>NGWE</span>
+                <span class="waste-management">WASTE MANAGEMENT</span>
             </h1>
             <p class="subtitle">Anniversary Celebration Countdown</p>
         </div>
@@ -260,30 +272,22 @@
     </div>
 
     <script>
-        // Set the date we're counting down to (November 22, 2025 at midnight)
         const countDownDate = new Date("Nov 22, 2025 00:00:00").getTime();
 
-        // Update the countdown every 1 second
         const x = setInterval(function() {
-            // Get today's date and time
             const now = new Date().getTime();
-            
-            // Find the distance between now and the count down date
             const distance = countDownDate - now;
             
-            // Time calculations for days, hours, minutes and seconds
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
             
-            // Display the result in the elements
             document.getElementById("days").innerHTML = String(days).padStart(2, '0');
             document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
             document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
             document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
             
-            // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "<h2 style='color: #9b30ff; font-size: 2.5em;'>🎉 Happy Birthday Ingwe! 🎉</h2>";
@@ -292,7 +296,3 @@
     </script>
 </body>
 </html>
-
-
-
-
